@@ -14,12 +14,16 @@ highscore = 0
 if os.path.exists("config.ini"):
     with open("config.ini", mode="r") as file:
         highscore = int(file.readline().strip())
+else:
+    with open("config.ini", mode="w") as file:
+        highscore = 0
+        file.write(str(highscore))
         
 def main():
     global HEIGHT, WIDTH, mp, canadd, score
 
     win = Tk()
-    win.title("2048  -- By lanlan2_")
+    win.title("2048 V1.0.2 -- By lanlan2_")
     win.resizable(0, 0)
     win.iconbitmap("icon.ico")
     win.geometry("+300+200")
